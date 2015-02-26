@@ -1,0 +1,26 @@
+<%= render 'shared/navbar' %>
+<div class="container">
+  <div class="page-header">
+    <h1> List of Talks </h1>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th> Title </th>
+        <th> Date </th>
+        <div class="btn btn-info pull-right">
+          <%= link_to 'New Talk', new_talk_path %>
+        </div>
+      </tr>
+    <thead>
+    <tbody>
+      <% @talks.each do |talk| %>
+        <tr>
+          <td><%= talk.title %></td>
+          <td><%= talk.date.strftime("%m/%d/%y") %></td>
+        </tr>
+      <% end %>
+    <tbody>
+  </table>
+
+</div>
